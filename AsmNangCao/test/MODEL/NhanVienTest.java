@@ -29,125 +29,107 @@ public class NhanVienTest {
     }
 
     /**
-     * Test of toString method, of class NhanVien.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        NhanVien instance = new NhanVien();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getMaNV method, of class NhanVien.
+     * getMaNV
      */
     @Test
     public void testGetMaNV() {
-        System.out.println("getMaNV");
         NhanVien instance = new NhanVien();
-        String expResult = "";
+        final String testValue = "001";
+        instance.setMaNV(testValue);
+
+        String expResult = testValue;
         String result = instance.getMaNV();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setMaNV method, of class NhanVien.
+     * setMaNV
      */
     @Test
     public void testSetMaNV() {
-        System.out.println("setMaNV");
-        String maNV = "";
         NhanVien instance = new NhanVien();
-        instance.setMaNV(maNV);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        final String testValue = "008";
+        instance.setMaNV(testValue);
+
+        String expResult = testValue;
+        String result = instance.getMaNV();
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of getMatkhau method, of class NhanVien.
+     * getMatKhau
      */
     @Test
-    public void testGetMatkhau() {
-        System.out.println("getMatkhau");
+    public void testGetMatKhau() {
         NhanVien instance = new NhanVien();
-        String expResult = "";
+        final String testValue = "quangphi0611";
+        instance.setMatkhau(testValue);
+
+        String expResult = testValue;
         String result = instance.getMatkhau();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setMatkhau method, of class NhanVien.
+     * setMatKhau
      */
     @Test
-    public void testSetMatkhau() {
-        System.out.println("setMatkhau");
-        String matkhau = "";
+    public void testSetMatKhau() {
         NhanVien instance = new NhanVien();
-        instance.setMatkhau(matkhau);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        final String testValue = "0611";
+        instance.setMatkhau(testValue);
+
+        String expResult = testValue;
+        String result = instance.getMatkhau();
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of getHoTen method, of class NhanVien.
+     * getHoTen
      */
     @Test
     public void testGetHoTen() {
-        System.out.println("getHoTen");
         NhanVien instance = new NhanVien();
-        String expResult = "";
+        final String testValue = "Lê Quang Phi";
+        instance.setHoTen(testValue);
+
+        String expResult = testValue;
         String result = instance.getHoTen();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setHoTen method, of class NhanVien.
+     * setHoTen
      */
     @Test
     public void testSetHoTen() {
-        System.out.println("setHoTen");
-        String hoTen = "";
         NhanVien instance = new NhanVien();
-        instance.setHoTen(hoTen);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        final String testValue = "Quang Phi";
+        instance.setHoTen(testValue);
+
+        String expResult = testValue;
+        String result = instance.getHoTen();
+        assertEquals(expResult, result);
     }
 
     /**
-     * Test of isVaiTro method, of class NhanVien.
+     * TisVaiTro
      */
     @Test
     public void testIsVaiTro() {
-        System.out.println("isVaiTro");
         NhanVien instance = new NhanVien();
-        boolean expResult = false;
-        boolean result = instance.isVaiTro();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.setVaiTro(true);
+        assertTrue(instance.isVaiTro());
     }
 
     /**
-     * Test of setVaiTro method, of class NhanVien.
+     * setVaiTro
      */
     @Test
     public void testSetVaiTro() {
-        System.out.println("setVaiTro");
-        boolean vaiTro = false;
         NhanVien instance = new NhanVien();
-        instance.setVaiTro(vaiTro);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.setVaiTro(false);
+        assertFalse(instance.isVaiTro());
     }
 
 }
