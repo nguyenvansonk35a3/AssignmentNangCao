@@ -7,14 +7,20 @@ package DAO;
 
 import HELPER.JDBCHelper;
 import MODEL.ChuyenDe;
+import java.util.ArrayList;
 import java.util.List;
+import org.hamcrest.CoreMatchers;
+import static org.junit.Assert.assertThat;
+import org.mockito.ArgumentMatchers;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import static org.testng.Assert.*;
+import org.testng.IObjectFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.ObjectFactory;
 import org.testng.annotations.Test;
 
 /**
@@ -29,6 +35,11 @@ public class ChuyenDeDAONGTest {
     public ChuyenDeDAONGTest() {
     }
 
+    @ObjectFactory
+    public IObjectFactory getObjectFfactory() {
+        return new org.powermock.modules.testng.PowerMockObjectFactory();
+    }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
@@ -54,11 +65,18 @@ public class ChuyenDeDAONGTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        ChuyenDe model = null;
-        ChuyenDeDAO instance = new ChuyenDeDAO();
-        instance.insert(model);
+        ChuyenDe model = new ChuyenDe();
+        chuyenDeDAO.insert(model);
         
     }
+    
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testInsertWithModel(){
+        System.out.println("insert with null model");
+        ChuyenDe model = null;
+        chuyenDeDAO.insert(model);
+    }
+    
 
     /**
      * Test of update method, of class ChuyenDeDAO.
@@ -66,12 +84,17 @@ public class ChuyenDeDAONGTest {
     @Test
     public void testUpdate() {
         System.out.println("update");
-        ChuyenDe model = null;
-        ChuyenDeDAO instance = new ChuyenDeDAO();
-        instance.update(model);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ChuyenDe model = new ChuyenDe();
+        chuyenDeDAO.update(model);
     }
+    
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testUpdateWithModel(){
+        System.out.println("update with null model");
+        ChuyenDe model = null;
+        chuyenDeDAO.update(model);
+    }
+    
 
     /**
      * Test of delete method, of class ChuyenDeDAO.
@@ -79,86 +102,120 @@ public class ChuyenDeDAONGTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        String MaCD = "";
+        String MaCD = "1";
         ChuyenDeDAO instance = new ChuyenDeDAO();
         instance.delete(MaCD);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
+    
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testDeleteNull(){
+        System.out.println("delete null");
+        String MaCD = null;
+        ChuyenDeDAO instance = null;
+        instance.delete(MaCD);
+    }
     /**
      * Test of select method, of class ChuyenDeDAO.
      */
     @Test
-    public void testSelect_0args() {
+    public void testSelect_0args() throws Exception {
         System.out.println("select");
-        ChuyenDeDAO instance = new ChuyenDeDAO();
-        List expResult = null;
-        List result = instance.select();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ChuyenDe expResult = new ChuyenDe();
+        List<ChuyenDe> resuiltList = new ArrayList<>();
+        resuiltList.add(expResult);
+        PowerMockito.doReturn(resuiltList).when(chuyenDeDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
     }
 
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testSelectNull(){
+        System.out.println("select null");
+        ChuyenDeDAO instance = new ChuyenDeDAO();
+        List<ChuyenDe> exResult = null;
+        List<ChuyenDe> result = instance.select();
+        assertEquals(exResult, result);
+    }
     /**
      * Test of findById method, of class ChuyenDeDAO.
      */
     @Test
-    public void testFindById() {
+    public void testFindById() throws Exception {
         System.out.println("findById");
-        String macd = "";
+        String macd = "1";
+        KhoaHocDAO instance = new KhoaHocDAO();
+        ChuyenDe expResult = new ChuyenDe();
+        List<ChuyenDe> resuiltList = new ArrayList<>();
+        resuiltList.add(expResult);
+        PowerMockito.doReturn(resuiltList)
+                .when(chuyenDeDAOSpy, "select",
+                        ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        ChuyenDe result = chuyenDeDAOSpy.findById(macd);
+        assertThat(result, CoreMatchers.is(expResult));
+    }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testFindByIdNull(){
+        System.out.println("findById null");
+        String macd = "0";
         ChuyenDeDAO instance = new ChuyenDeDAO();
         ChuyenDe expResult = null;
         ChuyenDe result = instance.findById(macd);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);
     }
-
     /**
      * Test of findByName method, of class ChuyenDeDAO.
      */
     @Test
-    public void testFindByName() {
+    public void testFindByName() throws Exception {
         System.out.println("findByName");
         String tencd = "";
         ChuyenDeDAO instance = new ChuyenDeDAO();
+        ChuyenDe expResult = new ChuyenDe();
+        List<ChuyenDe> resuiltList = new ArrayList<>();
+        resuiltList.add(expResult);
+        PowerMockito.doReturn(resuiltList)
+                .when(chuyenDeDAOSpy, "select",
+                        ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        ChuyenDe result = chuyenDeDAOSpy.findById(tencd);
+        assertThat(result, CoreMatchers.is(expResult));
+    }
+    
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testFindByNameNull(){
+        System.out.println("findById null");
+        String tencd = "";
+        ChuyenDeDAO instance = new ChuyenDeDAO();
         ChuyenDe expResult = null;
-        ChuyenDe result = instance.findByName(tencd);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ChuyenDe result = instance.findById(tencd);
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of select method, of class ChuyenDeDAO.
      */
-    @Test
-    public void testSelect_String_ObjectArr() {
-        System.out.println("select");
-        String sql = "";
-        Object[] args = null;
-        ChuyenDeDAO instance = new ChuyenDeDAO();
-        List expResult = null;
-        List result = instance.select(sql, args);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of checkID method, of class ChuyenDeDAO.
-     */
-    @Test
-    public void testCheckID() {
-        System.out.println("checkID");
-        String maCD = "";
-        ChuyenDeDAO instance = new ChuyenDeDAO();
-        boolean expResult = false;
-        boolean result = instance.checkID(maCD);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+//    @Test
+//    public void testSelect_String_ObjectArr() {
+//        System.out.println("select");
+//        String sql = "";
+//        Object[] args = null;
+//        ChuyenDeDAO instance = new ChuyenDeDAO();
+//        List expResult = null;
+//        List result = instance.select(sql, args);
+//        assertEquals(result, expResult);
+//        
+//    }
+//
+//    /**
+//     * Test of checkID method, of class ChuyenDeDAO.
+//     */
+//    @Test
+//    public void testCheckID() {
+//        System.out.println("checkID");
+//        String id = "";
+//        ChuyenDeDAO instance = new ChuyenDeDAO();
+//        boolean expResult = false;
+//        boolean result = instance.checkID(id);
+//        assertEquals(result, expResult);
+//        
+//    }
+//    
 }

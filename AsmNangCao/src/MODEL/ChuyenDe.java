@@ -11,7 +11,7 @@ public class ChuyenDe {
 
     @Override
     public String toString() {
-        return "ChuyenDe{" + "maCD=" + maCD + ", tenCD=" + tenCD + ", hocPhi=" + hocPhi + ", thoiLuong=" + thoiLuong + ", hinh=" + hinh + ", moTa=" + moTa + '}';
+        return this.maCD;
     }
 
     public String getMaCD() {

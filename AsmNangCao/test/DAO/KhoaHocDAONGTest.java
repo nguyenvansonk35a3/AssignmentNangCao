@@ -25,14 +25,18 @@ import org.testng.annotations.Test;
 
 @PrepareForTest({KhoaHocDAO.class, JDBCHelper.class})
 public class KhoaHocDAONGTest {
-       KhoaHocDAO Khoahocdao;
+
+    KhoaHocDAO Khoahocdao;
     KhoaHocDAO KhoahocdaoSpy;
+
     public KhoaHocDAONGTest() {
     }
- @ObjectFactory
+
+    @ObjectFactory
     public IObjectFactory getObjectFfactory() {
         return new org.powermock.modules.testng.PowerMockObjectFactory();
     }
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
@@ -43,7 +47,7 @@ public class KhoaHocDAONGTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
-          Khoahocdao = new KhoaHocDAO();
+        Khoahocdao = new KhoaHocDAO();
         PowerMockito.mockStatic(JDBCHelper.class);
         KhoahocdaoSpy = PowerMockito.spy(new KhoaHocDAO());
     }
@@ -52,14 +56,14 @@ public class KhoaHocDAONGTest {
     public void tearDownMethod() throws Exception {
     }
 
- @Test
+    @Test
     public void testInsert() {
         System.out.println("insert");
         KhoaHoc model = new KhoaHoc();
         Khoahocdao.insert(model);
     }
 
-   @Test(expectedExceptions = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void testInsertWithNullModel() {
         System.out.println("insert with null model");
         KhoaHoc model = null;
@@ -69,14 +73,14 @@ public class KhoaHocDAONGTest {
     /**
      * Test of update method, of class KhoaHocDAO.
      */
-   @Test
+    @Test
     public void testUpdate() {
         System.out.println("update");
         KhoaHoc model = new KhoaHoc();
         Khoahocdao.update(model);
     }
 
-   @Test(expectedExceptions = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void testUpdateWithNullModel() {
         System.out.println("update with null model");
         KhoaHoc model = null;
@@ -86,7 +90,7 @@ public class KhoaHocDAONGTest {
     /**
      * Test of delete method, of class KhoaHocDAO.
      */
-   @Test
+    @Test
     public void testDelete() {
         System.out.println("delete");
         Integer MaKH = 1;
@@ -95,7 +99,7 @@ public class KhoaHocDAONGTest {
 
     }
 
-   @Test(expectedExceptions = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void testDeleteNull() {
         System.out.println("delete null");
         Integer MaKH = null;
@@ -114,8 +118,8 @@ public class KhoaHocDAONGTest {
         List<KhoaHoc> resuiltList = new ArrayList<>();
         resuiltList.add(expResult);
         PowerMockito.doReturn(resuiltList)
-            .when(KhoahocdaoSpy, "select",
-               ArgumentMatchers.anyString(), ArgumentMatchers.any());
+                .when(KhoahocdaoSpy, "select",
+                        ArgumentMatchers.anyString(), ArgumentMatchers.any());
         List<KhoaHoc> result = KhoahocdaoSpy.select();
         assertThat(result, CoreMatchers.is(resuiltList));
 
@@ -134,7 +138,7 @@ public class KhoaHocDAONGTest {
     /**
      * Test of findById method, of class KhoaHocDAO.
      */
-   @Test(expectedExceptions = NullPointerException.class)
+    @Test(expectedExceptions = NullPointerException.class)
     public void testFindByIdNull() throws Exception {
         System.out.println("findById null");
         Integer makh = 0;
@@ -142,10 +146,10 @@ public class KhoaHocDAONGTest {
         KhoaHoc expResult = null;
         KhoaHoc result = instance.findById(makh);
         assertEquals(expResult, result);
-        
+
     }
 
-     @Test
+    @Test
     public void testFindById() throws Exception {
         System.out.println("findById");
         Integer ma = 1;
@@ -154,11 +158,10 @@ public class KhoaHocDAONGTest {
         List<KhoaHoc> resuiltList = new ArrayList<>();
         resuiltList.add(expResult);
         PowerMockito.doReturn(resuiltList)
-           .when(KhoahocdaoSpy, "select",
-               ArgumentMatchers.anyString(), ArgumentMatchers.any());
+                .when(KhoahocdaoSpy, "select",
+                        ArgumentMatchers.anyString(), ArgumentMatchers.any());
         KhoaHoc result = KhoahocdaoSpy.findById(ma);
         assertThat(result, CoreMatchers.is(expResult));
     }
-   
-    
+
 }

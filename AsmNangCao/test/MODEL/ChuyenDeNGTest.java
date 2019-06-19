@@ -5,6 +5,7 @@
  */
 package MODEL;
 
+import org.powermock.core.classloader.annotations.PrepareForTest;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
  *
  * @author DELL
  */
+@PrepareForTest({ChuyenDe.class})
 public class ChuyenDeNGTest {
     
     public ChuyenDeNGTest() {
@@ -44,11 +46,10 @@ public class ChuyenDeNGTest {
     public void testToString() {
         System.out.println("toString");
         ChuyenDe instance = new ChuyenDe();
-        String expResult = "";
+        String expResult = null;
         String result = instance.toString();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -58,11 +59,10 @@ public class ChuyenDeNGTest {
     public void testGetMaCD() {
         System.out.println("getMaCD");
         ChuyenDe instance = new ChuyenDe();
-        String expResult = "";
+        String expResult = null;
         String result = instance.getMaCD();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -74,8 +74,7 @@ public class ChuyenDeNGTest {
         String maCD = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setMaCD(maCD);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -85,11 +84,10 @@ public class ChuyenDeNGTest {
     public void testGetTenCD() {
         System.out.println("getTenCD");
         ChuyenDe instance = new ChuyenDe();
-        String expResult = "";
+        String expResult = null;
         String result = instance.getTenCD();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -101,8 +99,7 @@ public class ChuyenDeNGTest {
         String tenCD = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setTenCD(tenCD);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -112,11 +109,10 @@ public class ChuyenDeNGTest {
     public void testGetHocPhi() {
         System.out.println("getHocPhi");
         ChuyenDe instance = new ChuyenDe();
-        double expResult = 0.0;
+        double expResult = 1.1;
         double result = instance.getHocPhi();
-        assertEquals(result, expResult, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(result, expResult, 1.1);
+        
     }
 
     /**
@@ -125,11 +121,10 @@ public class ChuyenDeNGTest {
     @Test
     public void testSetHocPhi() {
         System.out.println("setHocPhi");
-        double hocPhi = 0.0;
+        double hocPhi = 1.0;
         ChuyenDe instance = new ChuyenDe();
         instance.setHocPhi(hocPhi);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -142,8 +137,7 @@ public class ChuyenDeNGTest {
         int expResult = 0;
         int result = instance.getThoiLuong();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -155,8 +149,7 @@ public class ChuyenDeNGTest {
         int thoiLuong = 0;
         ChuyenDe instance = new ChuyenDe();
         instance.setThoiLuong(thoiLuong);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -166,11 +159,10 @@ public class ChuyenDeNGTest {
     public void testGetHinh() {
         System.out.println("getHinh");
         ChuyenDe instance = new ChuyenDe();
-        String expResult = "";
+        String expResult = null;
         String result = instance.getHinh();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -182,8 +174,7 @@ public class ChuyenDeNGTest {
         String hinh = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setHinh(hinh);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -193,11 +184,10 @@ public class ChuyenDeNGTest {
     public void testGetMoTa() {
         System.out.println("getMoTa");
         ChuyenDe instance = new ChuyenDe();
-        String expResult = "";
+        String expResult = null;
         String result = instance.getMoTa();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -209,8 +199,7 @@ public class ChuyenDeNGTest {
         String moTa = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setMoTa(moTa);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

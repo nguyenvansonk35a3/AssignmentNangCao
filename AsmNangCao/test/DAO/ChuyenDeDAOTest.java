@@ -27,6 +27,11 @@ import org.powermock.modules.junit4.PowerMockRunner;
  *
  * @author DELL
  */
+//
+//
+//
+//
+//
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({JDBCHelper.class, ChuyenDeDAO.class})
 public class ChuyenDeDAOTest {
@@ -167,17 +172,17 @@ public class ChuyenDeDAOTest {
         assertThat(result, CoreMatchers.is(exResult));
     }
     
-//    @Test
-//    public void testFinByNameWithNotFound() throws Exception{
-//        System.out.println("findById");
-//        String tecd = "";
-//        ChuyenDe exResult = null;
-//        List<ChuyenDe> resultList = new ArrayList<>();
-//        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "Select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
-//        
-//        ChuyenDe result = chuyenDeDAOSpy.findById(tecd);
-//        assertThat(result, CoreMatchers.is(exResult));
-//    }
+    @Test
+    public void testFinByNameWithNotFound() throws Exception{
+        System.out.println("findById");
+        String tecd = "";
+        ChuyenDe exResult = null;
+        List<ChuyenDe> resultList = new ArrayList<>();
+        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "Select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        
+        ChuyenDe result = chuyenDeDAOSpy.findById(tecd);
+        assertThat(result, CoreMatchers.is(exResult));
+    }
     
 
     /**
@@ -200,15 +205,14 @@ public class ChuyenDeDAOTest {
      * Test of checkID method, of class ChuyenDeDAO.
      */
 //    @Test
-//    public void testCheckID() {
+//    public void testCheckID() throws Exception {
 //        System.out.println("checkID");
-//        String maCD = "";
-//        ChuyenDeDAO instance = new ChuyenDeDAO();
-//        boolean expResult = false;
-//        boolean result = instance.checkID(maCD);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//        String id = "";
+//        boolean exResult =false;
+//        List<ChuyenDe> resultList = new ArrayList<>();
+//        PowerMockito.doReturn(exResult).when(chuyenDeDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+//        boolean result = chuyenDeDAOSpy.checkID(id);
+//        assertEquals(exResult, result);
 //    }
     
 }
