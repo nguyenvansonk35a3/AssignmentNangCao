@@ -16,7 +16,7 @@ public class KhoaHoc {
 
     @Override
     public String toString() {
-        return this.maCD + "(" + this.ngayKG + ")";
+        return this.maCD ;
     }
 
     public int getMaKH() {
