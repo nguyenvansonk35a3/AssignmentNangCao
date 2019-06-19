@@ -39,8 +39,9 @@ public class ChuyenDeDAONGTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
-//        ChuyenDeDAO = new ChuyenDeDAO();
-//        PowerMockito
+        chuyenDeDAO = new ChuyenDeDAO();
+        PowerMockito.mockStatic(JDBCHelper.class);
+        chuyenDeDAOSpy = PowerMockito.spy(new ChuyenDeDAO());
     }
 
     @AfterMethod
