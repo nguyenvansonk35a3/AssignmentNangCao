@@ -91,10 +91,20 @@ public class NguoiHocDAONGTest {
      * Test of select method, of class NguoiHocDAO.
      */
     @Test
-    public void testSelect() throws Exception{
+    public void testSelect() throws  Exception{
         System.out.println("select");
         NguoiHoc nguoiHoc = new NguoiHoc();
-        List<NguoiHoc>  expResult = new ArrayList<>();
+        List<NguoiHoc> expResult = new ArrayList<>();
+        expResult.add(nguoiHoc);
+        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString());
+        List<NguoiHoc> result = nguoiHocDAOSpy.select();
+        assertThat(result, CoreMatchers.is(expResult));
+    }
+    @Test
+    public void testSelectWithNull() throws  Exception{
+        System.out.println("select with null");
+        NguoiHoc nguoiHoc = null;
+        List<NguoiHoc> expResult = new ArrayList<>();
         expResult.add(nguoiHoc);
         PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString());
         List<NguoiHoc> result = nguoiHocDAOSpy.select();
@@ -105,15 +115,26 @@ public class NguoiHocDAONGTest {
      * Test of selectByKeyword method, of class NguoiHocDAO.
      */
     @Test
-    public void testSelectByKeyword() throws Exception{
+    public void testSelectByKeyword()throws Exception{
         System.out.println("selectByKeyword");
-        String keyword = "22";
-        NguoiHoc instance = new NguoiHoc();
+        String Hoten = "binh";
+        NguoiHoc nguoiHoc = new NguoiHoc();
         List<NguoiHoc> expResult = new ArrayList<>();
-        expResult.add(instance);
+        expResult.add(nguoiHoc);
         PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
-        List<NguoiHoc> result = nguoiHocDAOSpy.selectByKeyword(keyword);
-        assertThat(result, CoreMatchers.is(expResult));
+        List<NguoiHoc> result = nguoiHocDAOSpy.selectByKeyword(Hoten);
+        assertThat( result, CoreMatchers.is(expResult));
+    }
+    @Test
+    public void testSelectByKeywordWithNull()throws Exception{
+        System.out.println("selectByKeyword with null");
+        String Hoten = null;
+        NguoiHoc nguoiHoc = null;
+        List<NguoiHoc> expResult = new ArrayList<>();
+        expResult.add(nguoiHoc);
+        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        List<NguoiHoc> result = nguoiHocDAOSpy.selectByKeyword(Hoten);
+        assertThat( result, CoreMatchers.is(expResult));
     }
 
     /**
@@ -122,28 +143,50 @@ public class NguoiHocDAONGTest {
     @Test
     public void testSelectByCourse() throws Exception{
         System.out.println("selectByCourse");
-        Integer makh = 55;
+        Integer makh = 45;
         NguoiHoc nguoiHoc = new NguoiHoc();
         List<NguoiHoc> expResult = new ArrayList<>();
         expResult.add(nguoiHoc);
-        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(),ArgumentMatchers.any());
         List<NguoiHoc> result = nguoiHocDAOSpy.selectByCourse(makh);
-        assertThat(result, CoreMatchers.is(expResult));
+        assertThat( result, CoreMatchers.is(expResult));
     }
-
+    
+    @Test
+    public void testSelectByCourseWithNull() throws Exception{
+        System.out.println("selectByCourse with null");
+        Integer makh = null;
+        NguoiHoc nguoiHoc = null;
+        List<NguoiHoc> expResult = new ArrayList<>();
+        expResult.add(nguoiHoc);
+        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(),ArgumentMatchers.any());
+        List<NguoiHoc> result = nguoiHocDAOSpy.selectByCourse(makh);
+        assertThat( result, CoreMatchers.is(expResult));
+    }
+    
     /**
      * Test of findById method, of class NguoiHocDAO.
      */
-//    @Test
-//    public void testFindById() throws  Exception{
-//        System.out.println("findById");
-//        String manh = "45";
-//        NguoiHoc expResult = null;
-//        List<NguoiHoc> resultList = new ArrayList<>();
-//        PowerMockito.doReturn(expResult).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
-//        NguoiHoc result = nguoiHocDAOSpy.findById(manh);
-//        assertThat(result, CoreMatchers.is(expResult));
-//    }
+    @Test
+    public void testFindById() throws Exception{
+        System.out.println("findById");
+        String manh = "d1";
+        NguoiHoc expResult = null;
+        List<NguoiHoc> resultList = new ArrayList<>();
+        PowerMockito.doReturn(resultList).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        NguoiHoc result = nguoiHocDAOSpy.findById(manh);
+        assertThat(result, CoreMatchers.is(expResult));
+    }
+     @Test
+    public void testFindByIdWithNull() throws Exception{
+        System.out.println("findById with null");
+        String manh = null;
+        NguoiHoc expResult = null;
+        List<NguoiHoc> resultList = new ArrayList<>();
+        PowerMockito.doReturn(resultList).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        NguoiHoc result = nguoiHocDAOSpy.findById(manh);
+        assertThat(result, CoreMatchers.is(expResult));
+    }
 
     /**
      * Test of checkID method, of class NguoiHocDAO.
