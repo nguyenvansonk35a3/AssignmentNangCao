@@ -7,6 +7,9 @@ package DAO;
 
 import HELPER.JDBCHelper;
 import MODEL.ChuyenDe;
+import com.mockrunner.mock.jdbc.MockConnection;
+import com.mockrunner.mock.jdbc.MockResultSet;
+import com.mockrunner.mock.jdbc.MockStatement;
 import java.util.ArrayList;
 import java.util.List;
 import org.hamcrest.CoreMatchers;
@@ -19,6 +22,9 @@ import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatcher;
 import org.mockito.ArgumentMatchers;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Spy;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -41,6 +47,16 @@ public class ChuyenDeDAOTest {
     public ChuyenDeDAOTest() {
     }
     
+    @Mock
+    MockConnection connection;
+    
+    @Mock
+    MockStatement statement;
+    
+    @Spy
+    
+    @InjectMocks
+    MockResultSet rs = new MockResultSet("myMock");
     @BeforeClass
     public static void setUpClass() {
     }
@@ -73,7 +89,7 @@ public class ChuyenDeDAOTest {
     
     @Test(expected = NullPointerException.class)
     public void testInsertWithNullModel(){
-        System.out.println("Insert with null model");
+        System.out.println("insert with null model");
         ChuyenDe model = null;
         
         chuyenDeDAO.insert(model);
@@ -112,7 +128,7 @@ public class ChuyenDeDAOTest {
 
     /**
      * Test of select method, of class ChuyenDeDAO.
-     */
+//     */
     @Test
     public void testSelect_0args()throws Exception{
         System.out.println("select");
@@ -130,7 +146,7 @@ public class ChuyenDeDAOTest {
      */
     @Test
     public void testFindById() throws Exception {
-        System.out.println("findById");
+        System.out.println("findbyid");
         String macd = "12";
         
         ChuyenDe expResult = new ChuyenDe();
@@ -145,13 +161,13 @@ public class ChuyenDeDAOTest {
     
     @Test
     public void testFinByIdWithNotFound() throws Exception{
-        System.out.println("findById");
-        String macd = "";
+        System.out.println("findbyid");
+        String macd = "12";
         
         ChuyenDe exResult = null;
         List<ChuyenDe> resultList = new ArrayList<>();
         
-        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "Select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
         
         ChuyenDe result = chuyenDeDAOSpy.findById(macd);
         assertThat(result, CoreMatchers.is(exResult));
@@ -163,11 +179,11 @@ public class ChuyenDeDAOTest {
     @Test
     public void testFindByName() throws Exception {
         System.out.println("findByName");
-        String tencd = "JAVA";
+        String tencd = null;
         ChuyenDe exResult = new ChuyenDe();
         List<ChuyenDe> resultList = new ArrayList<>();
         resultList.add(exResult);
-        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "finByName", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
         ChuyenDe result = chuyenDeDAOSpy.findByName(tencd);
         assertThat(result, CoreMatchers.is(exResult));
     }
@@ -178,7 +194,7 @@ public class ChuyenDeDAOTest {
         String tecd = "";
         ChuyenDe exResult = null;
         List<ChuyenDe> resultList = new ArrayList<>();
-        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "Select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        PowerMockito.doReturn(resultList).when(chuyenDeDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
         
         ChuyenDe result = chuyenDeDAOSpy.findById(tecd);
         assertThat(result, CoreMatchers.is(exResult));
@@ -197,8 +213,7 @@ public class ChuyenDeDAOTest {
         List<ChuyenDe> expResult = null;
         List<ChuyenDe> result = instance.select(sql, args);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
