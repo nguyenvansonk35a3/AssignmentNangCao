@@ -142,11 +142,9 @@ public class KhoaHocDAONGTest {
     public void testFindByIdNull() throws Exception {
         System.out.println("findById null");
         Integer makh = 0;
-//        KhoaHocDAO instance = new KhoaHocDAO();
+
         KhoaHoc expResult = null;
-//        KhoaHoc result = instance.findById(makh);
-//        assertEquals(expResult, result);
-//        
+  
         List<KhoaHoc> resultList = new ArrayList<>();
         PowerMockito.doReturn(resultList).when(KhoahocdaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
         
