@@ -16,7 +16,7 @@ public class HocVien {
     private double diem = -1.0;
     @Override
     public String toString(){
-        return this.toString();
+        return this.getMaNH();
     }
 
     public int getMaHV() {
