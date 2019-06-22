@@ -46,7 +46,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetMaNH() {
         System.out.println("setMaNH");
-        String maNH = "";
+        String maNH = "nh01";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNH(maNH);
     }
@@ -69,7 +69,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetHoTen() {
         System.out.println("setHoTen");
-        String hoTen = "";
+        String hoTen = "binh";
         NguoiHoc instance = new NguoiHoc();
         instance.setHoTen(hoTen);
     }
@@ -92,7 +92,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetNgaySinh() {
         System.out.println("setNgaySinh");
-        Date ngaySinh = null;
+        Date ngaySinh = new Date(1999);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgaySinh(ngaySinh);
     }
@@ -115,7 +115,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetGioiTinh() {
         System.out.println("setGioiTinh");
-        boolean gioiTinh = false;
+        boolean gioiTinh = true;
         NguoiHoc instance = new NguoiHoc();
         instance.setGioiTinh(gioiTinh);
     }
@@ -138,7 +138,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetDienThoai() {
         System.out.println("setDienThoai");
-        String dienThoai = "";
+        String dienThoai = "0375166987";
         NguoiHoc instance = new NguoiHoc();
         instance.setDienThoai(dienThoai);
     }
@@ -161,7 +161,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetEmail() {
         System.out.println("setEmail");
-        String email = "";
+        String email = "tanbinh1909@gmail.com";
         NguoiHoc instance = new NguoiHoc();
         instance.setEmail(email);
     }
@@ -184,7 +184,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetGhiChu() {
         System.out.println("setGhiChu");
-        String ghiChu = "";
+        String ghiChu = "tot";
         NguoiHoc instance = new NguoiHoc();
         instance.setGhiChu(ghiChu);
     }
@@ -207,7 +207,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetMaNV() {
         System.out.println("setMaNV");
-        String maNV = "";
+        String maNV = "nv01";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNV(maNV);
     }
@@ -230,7 +230,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetNgayDK() {
         System.out.println("setNgayDK");
-        Date ngayDK = null;
+        Date ngayDK = new Date(1999);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgayDK(ngayDK);
     }

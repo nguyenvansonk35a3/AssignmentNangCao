@@ -6,10 +6,6 @@
 package MODEL;
 
 import java.util.Date;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,26 +14,7 @@ import static org.junit.Assert.*;
  * @author tanbinh
  */
 public class NguoiHocTest {
-     public NguoiHocTest() {
-        
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+  
     /**
      * Test of toString method, of class NguoiHoc.
      */
@@ -68,7 +45,7 @@ public class NguoiHocTest {
     @Test
     public void testSetMaNH() {
         System.out.println("setMaNH");
-        String maNH = null;
+        String maNH = "nh01";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNH(maNH);
     }
@@ -91,7 +68,7 @@ public class NguoiHocTest {
     @Test
     public void testSetHoTen() {
         System.out.println("setHoTen");
-        String hoTen = null;
+        String hoTen = "binh";
         NguoiHoc instance = new NguoiHoc();
         instance.setHoTen(hoTen);
     }
@@ -114,7 +91,7 @@ public class NguoiHocTest {
     @Test
     public void testSetNgaySinh() {
         System.out.println("setNgaySinh");
-        Date ngaySinh = null;
+        Date ngaySinh = new Date(1999);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgaySinh(ngaySinh);
     }
@@ -137,7 +114,7 @@ public class NguoiHocTest {
     @Test
     public void testSetGioiTinh() {
         System.out.println("setGioiTinh");
-        boolean gioiTinh = false;
+        boolean gioiTinh = true;
         NguoiHoc instance = new NguoiHoc();
         instance.setGioiTinh(gioiTinh);
     }
@@ -160,7 +137,7 @@ public class NguoiHocTest {
     @Test
     public void testSetDienThoai() {
         System.out.println("setDienThoai");
-        String dienThoai = "";
+        String dienThoai = "0375166987";
         NguoiHoc instance = new NguoiHoc();
         instance.setDienThoai(dienThoai);
     }
@@ -183,7 +160,7 @@ public class NguoiHocTest {
     @Test
     public void testSetEmail() {
         System.out.println("setEmail");
-        String email = "";
+        String email = "tanbinh1909@gmail.com";
         NguoiHoc instance = new NguoiHoc();
         instance.setEmail(email);
     }
@@ -206,7 +183,7 @@ public class NguoiHocTest {
     @Test
     public void testSetGhiChu() {
         System.out.println("setGhiChu");
-        String ghiChu = null;
+        String ghiChu = "tot";
         NguoiHoc instance = new NguoiHoc();
         instance.setGhiChu(ghiChu);
     }
@@ -229,7 +206,7 @@ public class NguoiHocTest {
     @Test
     public void testSetMaNV() {
         System.out.println("setMaNV");
-        String maNV = "";
+        String maNV = "nv01";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNV(maNV);
     }
@@ -252,7 +229,7 @@ public class NguoiHocTest {
     @Test
     public void testSetNgayDK() {
         System.out.println("setNgayDK");
-        Date ngayDK = null;
+        Date ngayDK = new Date(2019);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgayDK(ngayDK);
     }

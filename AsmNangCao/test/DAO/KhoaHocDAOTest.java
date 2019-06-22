@@ -25,8 +25,10 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({KhoaHocDAO.class, JDBCHelper.class})
 public class KhoaHocDAOTest {
-       KhoaHocDAO Khoahocdao;
+
+    KhoaHocDAO Khoahocdao;
     KhoaHocDAO KhoahocdaoSpy;
+
     public KhoaHocDAOTest() {
     }
     
@@ -40,7 +42,7 @@ public class KhoaHocDAOTest {
     
     @Before
     public void setUp() {
-         Khoahocdao = new KhoaHocDAO();
+        Khoahocdao = new KhoaHocDAO();
         PowerMockito.mockStatic(JDBCHelper.class);
         KhoahocdaoSpy = PowerMockito.spy(new KhoaHocDAO());
     }
@@ -58,7 +60,7 @@ public class KhoaHocDAOTest {
         KhoaHoc model = new KhoaHoc();
         Khoahocdao.insert(model);
     }
-
+    
     @Test(expected = NullPointerException.class)
     public void testInsertWithNullModel() {
         System.out.println("insert with null model");
@@ -75,7 +77,7 @@ public class KhoaHocDAOTest {
         KhoaHoc model = new KhoaHoc();
         Khoahocdao.update(model);
     }
-
+    
     @Test(expected = NullPointerException.class)
     public void testUpdateWithNullModel() {
         System.out.println("update with null model");
@@ -92,16 +94,15 @@ public class KhoaHocDAOTest {
         Integer MaKH = 1;
         KhoaHocDAO instance = new KhoaHocDAO();
         instance.delete(MaKH);
-
     }
-
+    
     @Test(expected = NullPointerException.class)
     public void testDeleteNull() {
         System.out.println("delete null");
         Integer MaKH = null;
         KhoaHocDAO instance = null; // new KhoaHocDAO
         instance.delete(MaKH);
-
+        
     }
 
     /**
@@ -118,9 +119,9 @@ public class KhoaHocDAOTest {
                         ArgumentMatchers.anyString(), ArgumentMatchers.any());
         List<KhoaHoc> result = KhoahocdaoSpy.select();
         assertThat(result, CoreMatchers.is(resuiltList));
-
+        
     }
-
+    
     @Test(expected = NullPointerException.class)
     public void testSelectNull() {
         System.out.println("select null");
@@ -128,23 +129,25 @@ public class KhoaHocDAOTest {
         List<KhoaHoc> expResult = null;
         List<KhoaHoc> result = instance.select();
         assertEquals(expResult, result);
-
+        
     }
 
     /**
      * Test of findById method, of class KhoaHocDAO.
      */
-    @Test(expected = NullPointerException.class)
+    @Test
     public void testFindByIdNull() throws Exception {
         System.out.println("findById null");
         Integer makh = 0;
-        KhoaHocDAO instance = new KhoaHocDAO();
         KhoaHoc expResult = null;
-        KhoaHoc result = instance.findById(makh);
-        assertEquals(expResult, result);
+        List<KhoaHoc> resultList = new ArrayList<>();
+        PowerMockito.doReturn(resultList).when(KhoahocdaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        KhoaHoc result = KhoahocdaoSpy.findById(makh);
+        assertThat(result, CoreMatchers.is(expResult));
 
+        
     }
-
+    
     @Test
     public void testFindById() throws Exception {
         System.out.println("findById");
