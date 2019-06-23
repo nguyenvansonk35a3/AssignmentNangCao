@@ -46,7 +46,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetMaNH() {
         System.out.println("setMaNH");
-        String maNH = "nh01";
+        String maNH = "NH001";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNH(maNH);
     }
@@ -69,7 +69,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetHoTen() {
         System.out.println("setHoTen");
-        String hoTen = "binh";
+        String hoTen = "Nguyen Van A";
         NguoiHoc instance = new NguoiHoc();
         instance.setHoTen(hoTen);
     }
@@ -92,7 +92,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetNgaySinh() {
         System.out.println("setNgaySinh");
-        Date ngaySinh = new Date(1999);
+        Date ngaySinh = new Date(19);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgaySinh(ngaySinh);
     }
@@ -184,7 +184,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetGhiChu() {
         System.out.println("setGhiChu");
-        String ghiChu = "tot";
+        String ghiChu = "moi";
         NguoiHoc instance = new NguoiHoc();
         instance.setGhiChu(ghiChu);
     }
@@ -207,7 +207,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetMaNV() {
         System.out.println("setMaNV");
-        String maNV = "nv01";
+        String maNV = "NV001";
         NguoiHoc instance = new NguoiHoc();
         instance.setMaNV(maNV);
     }
@@ -230,7 +230,7 @@ public class NguoiHocNGTest {
     @Test
     public void testSetNgayDK() {
         System.out.println("setNgayDK");
-        Date ngayDK = new Date(1999);
+        Date ngayDK = new Date(19);
         NguoiHoc instance = new NguoiHoc();
         instance.setNgayDK(ngayDK);
     }

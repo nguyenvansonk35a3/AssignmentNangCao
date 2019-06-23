@@ -75,7 +75,7 @@ public class NguoiHocDAOTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        String maNH = "";
+        String maNH = "NH004";
         nguoiHocDAO.delete(maNH);
     }
 //    @Test
@@ -111,7 +111,7 @@ public class NguoiHocDAOTest {
     @Test
     public void testSelectByKeyword()throws Exception{
         System.out.println("selectByKeyword");
-        String Hoten = "binh";
+        String Hoten = "Nguyen Van A";
         NguoiHoc nguoiHoc = new NguoiHoc();
         List<NguoiHoc> expResult = new ArrayList<>();
         expResult.add(nguoiHoc);
@@ -164,7 +164,7 @@ public class NguoiHocDAOTest {
     @Test
     public void testFindById() throws Exception{
         System.out.println("findById");
-        String manh = "d1";
+        String manh = "NH001";
         NguoiHoc expResult = null;
         List<NguoiHoc> resultList = new ArrayList<>();
         PowerMockito.doReturn(resultList).when(nguoiHocDAOSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());

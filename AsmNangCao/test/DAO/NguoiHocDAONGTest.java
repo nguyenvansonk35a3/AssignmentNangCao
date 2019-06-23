@@ -83,7 +83,7 @@ public class NguoiHocDAONGTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        String id = "";
+        String id = "NH005";
         nguoiHocDAO.delete(id);
     }
 
