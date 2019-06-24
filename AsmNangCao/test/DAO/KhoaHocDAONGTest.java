@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import HELPER.DateHelper;
 import HELPER.JDBCHelper;
 import MODEL.KhoaHoc;
 import java.util.ArrayList;
@@ -59,7 +60,7 @@ public class KhoaHocDAONGTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        KhoaHoc model = new KhoaHoc();
+        KhoaHoc model = new KhoaHoc(10,"PD02292", 150.0, 9,DateHelper.now() , "Lê Văn Khải", "PD02292");
         Khoahocdao.insert(model);
     }
 
@@ -76,7 +77,7 @@ public class KhoaHocDAONGTest {
     @Test
     public void testUpdate() {
         System.out.println("update");
-        KhoaHoc model = new KhoaHoc();
+        KhoaHoc model = new KhoaHoc(10,"PD02292", 150.0, 9,DateHelper.now() , "Khải Lê", "PD02292");
         Khoahocdao.update(model);
     }
 

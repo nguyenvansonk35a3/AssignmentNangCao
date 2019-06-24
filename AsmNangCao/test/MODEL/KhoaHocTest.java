@@ -101,9 +101,9 @@ public class KhoaHocTest {
     @Test(expected = AssertionError.class)
     public void testGetMaCDfail() {
         System.out.println("getMaCD fail");
-        KhoaHoc instance = new KhoaHoc();
+//        KhoaHoc instance = new KhoaHoc();
         String expResult = "PD02292";
-        String result = instance.getMaCD();
+        String result = new KhoaHoc().getMaCD();
         assertEquals(expResult, result);
 
     }
@@ -126,9 +126,9 @@ public class KhoaHocTest {
     @Test
     public void testGetHocPhi() {
         System.out.println("getHocPhi");
-        KhoaHoc instance = new KhoaHoc();
+//        KhoaHoc instance = new KhoaHoc();
         double expResult = 0.0;
-        double result = instance.getHocPhi();
+        double result = new KhoaHoc().getHocPhi();
         assertEquals(expResult, result, 0.0);
 
     }

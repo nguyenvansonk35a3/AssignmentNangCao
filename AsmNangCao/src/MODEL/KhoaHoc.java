@@ -19,6 +19,20 @@ public class KhoaHoc {
         return this.maCD ;
     }
 
+    public KhoaHoc() {
+    }
+
+    public KhoaHoc(int maKH, String maCD, double hocPhi, int thoiLuong, Date ngayKG, String ghiChu, String maNV) {
+        this.maKH = maKH;
+        this.maCD = maCD;
+        this.hocPhi = hocPhi;
+        this.thoiLuong = thoiLuong;
+        this.ngayKG = ngayKG;
+        this.ghiChu = ghiChu;
+        this.maNV = maNV;
+    }
+    
+
     public int getMaKH() {
         return maKH;
     }
