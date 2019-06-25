@@ -91,21 +91,29 @@ public class NhanVienDAOTest {
         instance.delete(MaNV);
     }
 
+    @org.testng.annotations.Test(expectedExceptions = NullPointerException.class)
+    public void testDeleteNull() {
+        System.out.println("delete null");
+        String MaNV = null;
+        ChuyenDeDAO instance = null;
+        instance.delete(MaNV);
+    }
+
     /**
      * find
      */
-    @Test
-    public void testFindByldWithNotFound() throws Exception {
-        System.out.println("findByld");
-        String manv = "";
-
-        NhanVien expResult = null;
-        List<NhanVien> resultList = new ArrayList<>();
-
-        PowerMockito.doReturn(resultList).when(nhanVienDaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
-        NhanVien result = nhanVienDaoSpy.findByld(manv);
-        assertEquals(result, CoreMatchers.is(expResult));
-    }
+//    @Test
+//    public void testFindByldWithNotFound() throws Exception {
+//        System.out.println("findByld");
+//        String manv = "";
+//
+//        NhanVien expResult = null;
+//        List<NhanVien> resultList = new ArrayList<>();
+//
+//        PowerMockito.doReturn(resultList).when(nhanVienDaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+//        NhanVien result = nhanVienDaoSpy.findByld(manv);
+//        assertEquals(result, CoreMatchers.is(expResult));
+//    }
 
     @Test
     public void testFindBid() throws Exception {
@@ -117,6 +125,20 @@ public class NhanVienDAOTest {
         resultList.add(expResult);
 
         PowerMockito.doReturn(resultList).when(nhanVienDaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+        NhanVien result = nhanVienDaoSpy.findByld(manv);
+        assertThat(result, CoreMatchers.is(expResult));
+    }
+
+    @Test
+    public void testFindByIdNull() throws Exception {
+        System.out.println("findById null");
+        String manv = "";
+
+        NhanVien expResult = null;
+
+        List<NhanVien> resultList = new ArrayList<>();
+        PowerMockito.doReturn(resultList).when(nhanVienDaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
+
         NhanVien result = nhanVienDaoSpy.findByld(manv);
         assertThat(result, CoreMatchers.is(expResult));
     }
@@ -134,7 +156,6 @@ public class NhanVienDAOTest {
 
         PowerMockito.doReturn(expectedResult).when(nhanVienDaoSpy, "select", ArgumentMatchers.anyString());
         List<NhanVien> result = nhanVienDaoSpy.select();
-
         assertThat(result, CoreMatchers.is(expectedResult));
     }
 
@@ -161,5 +182,4 @@ public class NhanVienDAOTest {
 //        boolean result = instance.checkID(id);
 //        assertEquals(expResult, result);
 //    }
-
 }

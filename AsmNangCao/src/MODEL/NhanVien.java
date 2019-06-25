@@ -10,10 +10,11 @@ package MODEL;
  * @author tanbinh
  */
 public class NhanVien {
+
     private String maNV;
     private String matkhau;
     private String hoTen;
-    private boolean vaiTro=false;
+    private boolean vaiTro = false;
 
     @Override
     public String toString() {
@@ -51,6 +52,14 @@ public class NhanVien {
     public void setVaiTro(boolean vaiTro) {
         this.vaiTro = vaiTro;
     }
-    
-    
+
+    public NhanVien() {
+    }
+
+    public NhanVien(String maNV, String hoTen, String maKhau, boolean vaiTro) {
+        this.maNV = maNV;
+        this.hoTen = hoTen;
+        this.matkhau = maKhau;
+        this.vaiTro = vaiTro;
+    }
 }

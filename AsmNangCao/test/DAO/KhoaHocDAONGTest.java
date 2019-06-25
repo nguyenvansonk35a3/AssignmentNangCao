@@ -60,7 +60,7 @@ public class KhoaHocDAONGTest {
     @Test
     public void testInsert() {
         System.out.println("insert");
-        KhoaHoc model = new KhoaHoc(10,"PD02292", 150.0, 9,DateHelper.now() , "Lê Văn Khải", "PD02292");
+        KhoaHoc model = new KhoaHoc(10, "PD02292", 150.0, 9, DateHelper.now(), "Lê Văn Khải", "PD02292");
         Khoahocdao.insert(model);
     }
 
@@ -77,7 +77,7 @@ public class KhoaHocDAONGTest {
     @Test
     public void testUpdate() {
         System.out.println("update");
-        KhoaHoc model = new KhoaHoc(10,"PD02292", 150.0, 9,DateHelper.now() , "Khải Lê", "PD02292");
+        KhoaHoc model = new KhoaHoc(10, "PD02292", 150.0, 9, DateHelper.now(), "Khải Lê", "PD02292");
         Khoahocdao.update(model);
     }
 
@@ -97,7 +97,6 @@ public class KhoaHocDAONGTest {
         Integer MaKH = 1;
         KhoaHocDAO instance = new KhoaHocDAO();
         instance.delete(MaKH);
-
     }
 
     @Test(expectedExceptions = NullPointerException.class)
@@ -106,7 +105,6 @@ public class KhoaHocDAONGTest {
         Integer MaKH = null;
         KhoaHocDAO instance = null; // new KhoaHocDAO
         instance.delete(MaKH);
-
     }
 
     /**
@@ -145,10 +143,10 @@ public class KhoaHocDAONGTest {
         Integer makh = 0;
 
         KhoaHoc expResult = null;
-  
+
         List<KhoaHoc> resultList = new ArrayList<>();
         PowerMockito.doReturn(resultList).when(KhoahocdaoSpy, "select", ArgumentMatchers.anyString(), ArgumentMatchers.any());
-        
+
         KhoaHoc result = KhoahocdaoSpy.findById(makh);
         assertThat(result, CoreMatchers.is(expResult));
 
@@ -158,7 +156,6 @@ public class KhoaHocDAONGTest {
     public void testFindById() throws Exception {
         System.out.println("findById");
         Integer ma = 1;
-//        KhoaHocDAO instance = new KhoaHocDAO();
         KhoaHoc expResult = new KhoaHoc();
         List<KhoaHoc> resuiltList = new ArrayList<>();
         resuiltList.add(expResult);

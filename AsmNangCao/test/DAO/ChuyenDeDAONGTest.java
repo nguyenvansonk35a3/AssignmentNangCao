@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
 
 import HELPER.JDBCHelper;
@@ -27,11 +22,12 @@ import org.testng.annotations.Test;
  *
  * @author DELL
  */
-@PrepareForTest({JDBCHelper.class,ChuyenDeDAO.class})
+@PrepareForTest({JDBCHelper.class, ChuyenDeDAO.class})
 public class ChuyenDeDAONGTest {
+
     ChuyenDeDAO chuyenDeDAO;
     ChuyenDeDAO chuyenDeDAOSpy;
-    
+
     public ChuyenDeDAONGTest() {
     }
 
@@ -39,7 +35,7 @@ public class ChuyenDeDAONGTest {
     public IObjectFactory getObjectFfactory() {
         return new org.powermock.modules.testng.PowerMockObjectFactory();
     }
-    
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
@@ -67,16 +63,15 @@ public class ChuyenDeDAONGTest {
         System.out.println("insert");
         ChuyenDe model = new ChuyenDe();
         chuyenDeDAO.insert(model);
-        
+
     }
-    
+
     @Test(expectedExceptions = NullPointerException.class)
-    public void testInsertWithModel(){
+    public void testInsertWithModel() {
         System.out.println("insert with null model");
         ChuyenDe model = null;
         chuyenDeDAO.insert(model);
     }
-    
 
     /**
      * Test of update method, of class ChuyenDeDAO.
@@ -87,14 +82,13 @@ public class ChuyenDeDAONGTest {
         ChuyenDe model = new ChuyenDe();
         chuyenDeDAO.update(model);
     }
-    
+
     @Test(expectedExceptions = NullPointerException.class)
-    public void testUpdateWithModel(){
+    public void testUpdateWithModel() {
         System.out.println("update with null model");
         ChuyenDe model = null;
         chuyenDeDAO.update(model);
     }
-    
 
     /**
      * Test of delete method, of class ChuyenDeDAO.
@@ -106,14 +100,15 @@ public class ChuyenDeDAONGTest {
         ChuyenDeDAO instance = new ChuyenDeDAO();
         instance.delete(MaCD);
     }
-    
+
     @Test(expectedExceptions = NullPointerException.class)
-    public void testDeleteNull(){
+    public void testDeleteNull() {
         System.out.println("delete null");
         String MaCD = null;
         ChuyenDeDAO instance = null;
         instance.delete(MaCD);
     }
+
     /**
      * Test of select method, of class ChuyenDeDAO.
      */
@@ -127,13 +122,14 @@ public class ChuyenDeDAONGTest {
     }
 
     @Test(expectedExceptions = NullPointerException.class)
-    public void testSelectNull(){
+    public void testSelectNull() {
         System.out.println("select null");
         ChuyenDeDAO instance = new ChuyenDeDAO();
         List<ChuyenDe> exResult = null;
         List<ChuyenDe> result = instance.select();
         assertEquals(exResult, result);
     }
+
     /**
      * Test of findById method, of class ChuyenDeDAO.
      */
@@ -153,7 +149,7 @@ public class ChuyenDeDAONGTest {
     }
 
     @Test(expectedExceptions = NullPointerException.class)
-    public void testFindByIdNull(){
+    public void testFindByIdNull() {
         System.out.println("findById null");
         String macd = "0";
         ChuyenDeDAO instance = new ChuyenDeDAO();
@@ -161,6 +157,7 @@ public class ChuyenDeDAONGTest {
         ChuyenDe result = instance.findById(macd);
         assertEquals(expResult, result);
     }
+
     /**
      * Test of findByName method, of class ChuyenDeDAO.
      */
@@ -178,9 +175,9 @@ public class ChuyenDeDAONGTest {
         ChuyenDe result = chuyenDeDAOSpy.findById(tencd);
         assertThat(result, CoreMatchers.is(expResult));
     }
-    
+
     @Test(expectedExceptions = NullPointerException.class)
-    public void testFindByNameNull(){
+    public void testFindByNameNull() {
         System.out.println("findById null");
         String tencd = "";
         ChuyenDeDAO instance = new ChuyenDeDAO();
