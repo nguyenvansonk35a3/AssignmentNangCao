@@ -86,7 +86,7 @@ public class NhanVienDAOTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        String MaNV = "";
+        String MaNV = "001";
         NhanVienDAO instance = new NhanVienDAO();
         instance.delete(MaNV);
     }

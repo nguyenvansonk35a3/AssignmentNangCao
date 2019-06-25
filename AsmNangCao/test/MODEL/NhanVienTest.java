@@ -90,7 +90,7 @@ public class NhanVienTest {
     @Test
     public void testGetHoTen() {
         NhanVien instance = new NhanVien();
-        final String testValue = "Nguyen Van Son";
+        final String testValue = "Son";
         instance.setHoTen(testValue);
 
         String expResult = testValue;
@@ -104,7 +104,7 @@ public class NhanVienTest {
     @Test
     public void testSetHoTen() {
         NhanVien instance = new NhanVien();
-        final String testValue = "Son";
+        final String testValue = "Nguyen";
         instance.setHoTen(testValue);
 
         String expResult = testValue;

@@ -41,7 +41,7 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of getMaNV method, of class NhanVien.
+     * Test of getMaNV 
      */
     @Test
     public void testGetMaNV() {
@@ -53,7 +53,7 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of setMaNV method, of class NhanVien.
+     * Test of setMaNV 
      */
     @Test
     public void testSetMaNV() {
@@ -64,19 +64,19 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of getMatkhau method, of class NhanVien.
+     * Test of getMatkhau 
      */
     @Test
     public void testGetMatkhau() {
         System.out.println("getMatkhau");
         NhanVien instance = new NhanVien();
-        String expResult = "";
+        String expResult = "123";
         String result = instance.getMatkhau();
         assertEquals(result, expResult);
     }
 
     /**
-     * Test of setMatkhau method, of class NhanVien.
+     * Test of setMatkhau 
      */
     @Test
     public void testSetMatkhau() {
@@ -87,19 +87,19 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of getHoTen method, of class NhanVien.
+     * Test of getHoTen 
      */
     @Test
     public void testGetHoTen() {
         System.out.println("getHoTen");
         NhanVien instance = new NhanVien();
-        String expResult = "Nguyen Van Son";
+        String expResult = "Van Son";
         String result = instance.getHoTen();
         assertEquals(result, expResult);
     }
 
     /**
-     * Test of setHoTen method, of class NhanVien.
+     * Test of setHoTen 
      */
     @Test
     public void testSetHoTen() {
@@ -110,7 +110,7 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of isVaiTro method, of class NhanVien.
+     * Test of isVaiTro 
      */
     @Test
     public void testIsVaiTro() {
@@ -122,7 +122,7 @@ public class NhanVienNGTest {
     }
 
     /**
-     * Test of setVaiTro method, of class NhanVien.
+     * Test of setVaiTro 
      */
     @Test
     public void testSetVaiTro() {

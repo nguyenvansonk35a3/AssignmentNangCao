@@ -134,7 +134,7 @@ public class NhanVienDAONGTest {
     }
 
     /**
-     * Test of findByld method, of class NhanVienDAO.
+     * Test of findByld 
      */
     @Test
     public void testFindByld() {
@@ -147,34 +147,30 @@ public class NhanVienDAONGTest {
     }
 
     /**
-     * Test of select method, of class NhanVienDAO.
+     * Test of select 
      */
-    @Test
-    public void testSelect_String_ObjectArr() {
-        System.out.println("select");
-        String sql = "";
-        Object[] args = null;
-        NhanVienDAO instance = new NhanVienDAO();
-        List expResult = null;
-        List result = instance.select(sql, args);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of checkID method, of class NhanVienDAO.
-     */
-    @Test
-    public void testCheckID() {
-        System.out.println("checkID");
-        String id = "";
-        NhanVienDAO instance = new NhanVienDAO();
-        boolean expResult = false;
-        boolean result = instance.checkID(id);
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testSelect_String_ObjectArr() {
+//        System.out.println("select");
+//        String sql = "";
+//        Object[] args = null;
+//        NhanVienDAO instance = new NhanVienDAO();
+//        List expResult = null;
+//        List result = instance.select(sql, args);
+//        assertEquals(result, expResult);
+//    }
+//
+//    /**
+//     * Test of checkID 
+//     */
+//    @Test
+//    public void testCheckID() {
+//        System.out.println("checkID");
+//        String id = "";
+//        NhanVienDAO instance = new NhanVienDAO();
+//        boolean expResult = false;
+//        boolean result = instance.checkID(id);
+//        assertEquals(result, expResult);
+//    }
 
 }
