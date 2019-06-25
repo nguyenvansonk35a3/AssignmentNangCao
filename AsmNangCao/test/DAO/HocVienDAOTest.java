@@ -93,7 +93,7 @@ public class HocVienDAOTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        Integer MaHV = null;
+        Integer MaHV = 1;
         HocVienDAO instance = new HocVienDAO();
         instance.delete(MaHV);
     }

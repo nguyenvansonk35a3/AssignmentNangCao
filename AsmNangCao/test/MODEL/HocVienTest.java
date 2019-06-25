@@ -62,15 +62,6 @@ public class HocVienTest {
         assertEquals(expResult, result);
     }
     
-     @Test
-    public void testGetMaHVfail() {
-        System.out.println("getMaHVfail");
-        HocVien instance = new HocVien();
-        int expResult = -1;
-        int result = instance.getMaHV();
-        assertEquals(expResult, result);
-    }
-    
     
 
     /**
@@ -79,7 +70,7 @@ public class HocVienTest {
     @Test
     public void testSetMaHV() {
         System.out.println("setMaHV");
-        int maHV = 0;
+        int maHV = 1;
         HocVien instance = new HocVien();
         instance.setMaHV(maHV);
     
@@ -104,7 +95,7 @@ public class HocVienTest {
     @Test
     public void testSetMaKH() {
         System.out.println("setMaKH");
-        int maKH = 0;
+        int maKH = 1;
         HocVien instance = new HocVien();
         instance.setMaKH(maKH);
     }
@@ -128,7 +119,7 @@ public class HocVienTest {
     @Test
     public void testSetMaNH() {
         System.out.println("setMaNH");
-        String maNH = "";
+        String maNH = null;
         HocVien instance = new HocVien();
         instance.setMaNH(maNH);
     }
@@ -144,14 +135,7 @@ public class HocVienTest {
         double result = instance.getDiem();
         assertEquals(expResult, result, 0.0);
     }
-        @Test
-    public void testGetDiemfail() {
-        System.out.println("getDiemfail");
-        HocVien instance = new HocVien();
-        double expResult = 0.1;
-        double result = instance.getDiem();
-        assertEquals(expResult, result, 0.0);
-    }
+
 
     /**
      * Test of setDiem method, of class HocVien.

@@ -103,7 +103,7 @@ public class HocVienNGTest {
     @Test
     public void testSetMaNH() {
         System.out.println("setMaNH");
-        String maNH = "";
+        String maNH = null;
         HocVien instance = new HocVien();
         instance.setMaNH(maNH);
     }
