@@ -28,6 +28,21 @@ public class NguoiHoc {
         return this.hoTen;
     }
 
+    public NguoiHoc() {
+    }
+
+    public NguoiHoc(String maNH, String hoTen, Date ngaySinh, boolean gioiTinh, String dienThoai, String email, String ghiChu, String maNV) {
+        this.maNH = maNH;
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.gioiTinh = gioiTinh;
+        this.dienThoai = dienThoai;
+        this.email = email;
+        this.ghiChu = ghiChu;
+        this.maNV = maNV;
+    }
+
+    
     public String getMaNH() {
         return maNH;
     }

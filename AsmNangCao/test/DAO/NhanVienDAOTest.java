@@ -102,7 +102,7 @@ public class NhanVienDAOTest {
     /**
      * find
      */
-//    @Test
+//    @Test(expected = AssertionError.class)
 //    public void testFindByldWithNotFound() throws Exception {
 //        System.out.println("findByld");
 //        String manv = "";
