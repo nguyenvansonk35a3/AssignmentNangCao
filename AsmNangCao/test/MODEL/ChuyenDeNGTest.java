@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MODEL;
 
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -19,7 +14,7 @@ import org.testng.annotations.Test;
  */
 @PrepareForTest({ChuyenDe.class})
 public class ChuyenDeNGTest {
-    
+
     public ChuyenDeNGTest() {
     }
 
@@ -49,7 +44,7 @@ public class ChuyenDeNGTest {
         String expResult = null;
         String result = instance.toString();
         assertEquals(result, expResult);
-        
+
     }
 
     /**
@@ -62,7 +57,7 @@ public class ChuyenDeNGTest {
         String expResult = null;
         String result = instance.getMaCD();
         assertEquals(result, expResult);
-        
+
     }
 
     /**
@@ -74,7 +69,7 @@ public class ChuyenDeNGTest {
         String maCD = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setMaCD(maCD);
-        
+
     }
 
     /**
@@ -87,7 +82,7 @@ public class ChuyenDeNGTest {
         String expResult = null;
         String result = instance.getTenCD();
         assertEquals(result, expResult);
-        
+
     }
 
     /**
@@ -99,7 +94,7 @@ public class ChuyenDeNGTest {
         String tenCD = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setTenCD(tenCD);
-        
+
     }
 
     /**
@@ -112,7 +107,7 @@ public class ChuyenDeNGTest {
         double expResult = 1.1;
         double result = instance.getHocPhi();
         assertEquals(result, expResult, 1.1);
-        
+
     }
 
     /**
@@ -124,7 +119,7 @@ public class ChuyenDeNGTest {
         double hocPhi = 1.0;
         ChuyenDe instance = new ChuyenDe();
         instance.setHocPhi(hocPhi);
-        
+
     }
 
     /**
@@ -137,7 +132,7 @@ public class ChuyenDeNGTest {
         int expResult = 0;
         int result = instance.getThoiLuong();
         assertEquals(result, expResult);
-        
+
     }
 
     /**
@@ -149,7 +144,7 @@ public class ChuyenDeNGTest {
         int thoiLuong = 0;
         ChuyenDe instance = new ChuyenDe();
         instance.setThoiLuong(thoiLuong);
-        
+
     }
 
     /**
@@ -162,7 +157,7 @@ public class ChuyenDeNGTest {
         String expResult = null;
         String result = instance.getHinh();
         assertEquals(result, expResult);
-        
+
     }
 
     /**
@@ -174,7 +169,7 @@ public class ChuyenDeNGTest {
         String hinh = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setHinh(hinh);
-        
+
     }
 
     /**
@@ -187,7 +182,7 @@ public class ChuyenDeNGTest {
         String expResult = null;
         String result = instance.getMoTa();
         assertEquals(result, expResult);
-       
+
     }
 
     /**
@@ -199,7 +194,7 @@ public class ChuyenDeNGTest {
         String moTa = "";
         ChuyenDe instance = new ChuyenDe();
         instance.setMoTa(moTa);
-        
+
     }
-    
+
 }

@@ -62,7 +62,7 @@ public class NhanVienTest {
     @Test
     public void testGetMatKhau() {
         NhanVien instance = new NhanVien();
-        final String testValue = "quangphi0611";
+        final String testValue = "son123";
         instance.setMatkhau(testValue);
 
         String expResult = testValue;
@@ -76,7 +76,7 @@ public class NhanVienTest {
     @Test
     public void testSetMatKhau() {
         NhanVien instance = new NhanVien();
-        final String testValue = "0611";
+        final String testValue = "123";
         instance.setMatkhau(testValue);
 
         String expResult = testValue;
@@ -90,7 +90,7 @@ public class NhanVienTest {
     @Test
     public void testGetHoTen() {
         NhanVien instance = new NhanVien();
-        final String testValue = "Lê Quang Phi";
+        final String testValue = "Nguyen Van Son";
         instance.setHoTen(testValue);
 
         String expResult = testValue;
@@ -104,7 +104,7 @@ public class NhanVienTest {
     @Test
     public void testSetHoTen() {
         NhanVien instance = new NhanVien();
-        final String testValue = "Quang Phi";
+        final String testValue = "Son";
         instance.setHoTen(testValue);
 
         String expResult = testValue;
